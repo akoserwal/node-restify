@@ -2431,21 +2431,18 @@ test('should emit error with multiple next calls with strictNext', function(t) {
     });
 });
 
-test('should have proxy event handlers as instance', function(t){
+test('should have proxy event handlers as instance', function(t) {
     var server = restify.createServer({
         handleUpgrades: false
     });
-  
-    t.equal(server.proxyEvents.length,7);
+    t.equal(server.proxyEvents.length, 7);
 
     server = restify.createServer({
         handleUpgrades: true
     });
 
-    t.equal(server.proxyEvents.length,6);
-    
+    t.equal(server.proxyEvents.length, 6);
     server.close(function() {
         t.end();
     });
-  
 });
